@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Chat Frontend</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emoji-js/3.7.0/emoji.min.js"></script>
+</head>
+<body>
+
+<div class="app-container">
+    <aside class="sidebar">
+        <div class="user-info">Usuario: <span id="nombre-usuario"></span></div>
+        <h3>Salas Temáticas</h3>
+        <div class="salas-list">
+            <button class="btn-sala active" data-sala="General">Sala General</button>
+            <button class="btn-sala" data-sala="Gaming">Sala Gaming</button>
+            <button class="btn-sala" data-sala="Desarrollo">Sala Desarrollo</button>
+        </div>
+        <button class="btn-salir" onclick="cerrarSesion()">Salir</button>
+    </aside>
+
+    <main class="chat-area">
+        <header class="chat-header">
+            <h2 id="titulo-sala">Sala General</h2>
+            <input type="text" id="input-buscador" class="search-bar" placeholder="Buscar en historial...">
+        </header>
+
+        <div id="caja-mensajes" class="caja-mensajes"></div>
+
+        <div id="emoji-picker" class="emoji-picker"></div>
+
+        <footer class="input-area">
+            <button type="button" id="btn-emoji" class="btn-herramienta">Emojis</button>
+            <label for="input-archivo" class="btn-herramienta" style="cursor:pointer;">Adjuntar</label>
+            <input type="file" id="input-archivo" style="display: none;">
+
+            <input type="text" id="input-msj" class="input-msj" placeholder="Escribe un mensaje..." autocomplete="off">
+            <button type="button" id="btn-enviar" class="btn-herramienta btn-enviar">Enviar</button>
+        </footer>
+    </main>
+</div>
+
+<script src="js/chat.js"></script>
+</body>
+</html>
